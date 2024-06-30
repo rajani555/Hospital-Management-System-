@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<style>
+	.header{
+		background-color: aquamarine;
+		align-items: center;
+		justify-content: center;
+		height: 300px;
+	}
+	
+	.header h1{
+		text-align: center;
+		padding-top: 20px;
+	}
+	
+	.container{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	
+</style>
+<body>
+	<div class="header">
+		<h1>USER - DASHBOARD</h1>
+		<hr/>
+		
+		<div class="container">
+			<h2>Welcome User...!!</h2>
+			
+			<h2>Welcome, [[${user.getFullname()}]]</h2>
+			
+			<span 
+			sec:authorize="isAuthenticated">
+			<a th:href="@{/logout}">Logout</a>
+			</span>
+			
+		</div>
+	</div>
+</body>
+</html>
